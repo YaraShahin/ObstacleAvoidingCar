@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from math import atan2, sqrt, pi, asin
 
 #function to move the car with speed in angle
-def move(speed, angle):
+def move(angle):
     if angle != 0:
         speed = 1
     else:
@@ -43,11 +43,11 @@ def does_fit(angle):
                 return d, a
     return 0, 0
 
-def angle_picker(goal):
-    d, a = does_fit(goal)
-    if d==0 or d>distance_to_goal:
+def angle_picker(distance_to_goal, angle_to_goal):
+    distance_to_obstacle, angle_to_obstacle = does_fit(angle_to_goal)
+    if distance_to_obstacle==0 or distance_to_obstacle>distance_to_goal:
         print("going to goal")
-        return goal
+        return angle_to_goal
     else:
         paths = []
         for obstacle in sensor.h(car.x):
@@ -63,8 +63,8 @@ def angle_picker(goal):
         ind = 0
         pre = 4
         for i in range(len(paths)):
-            if abs(paths[i]-goal-car.x[2])<pre:
-                pre = abs(paths[i]-goal-car.x[2])
+            if abs(paths[i]-angle_to_goal-car.x[2])<pre:
+                pre = abs(paths[i]-angle_to_goal-car.x[2])
                 ind = i
         try:
             print(">>> list:",paths, paths[ind])
@@ -95,7 +95,7 @@ if __name__ == "__main__":
             yf = float(input("Please enter the car's initial y coordinate to be less than 20 (grid size) and greater than zero: "))
         
         #Ask for the number of obstacles in a 20x20 Arena
-        n_ob = 300
+        n_ob = 100
         while(n_ob<2):
             n_ob = int(input("Please enter a not-less-than-two integer number of obstacles in the 20x20 grid arena: "))
         
@@ -129,35 +129,16 @@ if __name__ == "__main__":
         #define a RangebearingSensor(robot, map, animate) object 
         sensor = RangeBearingSensor(robot = car, map = map, animate = True)
         
-        #trial1: obstacle avoidance
-        """
-        diff_x = 1
-        diff_y = 1
-        while abs(diff_x)>0.1 or abs(diff_y)>0.1:
-            diff_x = xf - car.x[0]
-            diff_y = yf - car.x[1]
-            
-            ang = atan2(diff_y, diff_x)
-            
-            distance, angle = does_fit(ang)
-            if (distance == 0):
-                print("here")
-                #move the car in straight line (angle zero) if the current angle is the desired angle
-                move(1.5, ang-car.x[2])
-            else:
-                break
-        """
-        
         #trial2: obstacle avoid
-        diff_x = 1
-        diff_y = 1
-        while abs(diff_x)>0.5 or abs(diff_y)>0.5:
-            diff_x = xf - car.x[0]
-            diff_y = yf - car.x[1]
+        x_to_goal = 1
+        y_to_goal = 1
+        while abs(x_to_goal)>0.5 or abs(y_to_goal)>0.5:
+            x_to_goal = xf - car.x[0]
+            y_to_goal = yf - car.x[1]
             
-            distance_to_goal = sqrt(pow(diff_x, 2)+pow(diff_y, 2))
-            ang = atan2(diff_y, diff_x)
-            move(1.5, angle_picker(ang)-car.x[2])
+            distance_to_goal = sqrt(pow(x_to_goal, 2)+pow(y_to_goal, 2))
+            angle_to_goal = atan2(y_to_goal, x_to_goal)
+            move(angle_picker(distance_to_goal, angle_to_goal)-car.x[2])
         print("REACHED")
 
         #go_target(goal_x, goal_y)
