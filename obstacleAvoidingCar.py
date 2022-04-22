@@ -1,4 +1,5 @@
-#to-do: ignore obstacles if the target is closer
+#to-do: Adjust margins according to the density of the obstacles
+#to-do: Make educated emergency decision in case of obstacle closer than the length of the robot instead of a 90 degree turn
 
 from roboticstoolbox import Bicycle, VehicleIcon, RandomPath, LandmarkMap, RangeBearingSensor
 import matplotlib.pyplot as plt
