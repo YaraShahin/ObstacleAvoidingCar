@@ -44,7 +44,6 @@ The robot finds tangents to the obstacle and calculates distances of robot from 
 - `"So sorry, there's an unexpected error somehow? Can you pass me the laptop so I can double-check?"`: for unexpected errors
 - Car plot: There should be a pop-up plot visualizing the car heading in the planned direction, as well as black markers for the random obstacles and a red marker for the set goal.
 ### Code Functionalities
-#### move()
 - `move(angle)`: function takes the angle and moves the robot in that angle with a constant speed of 1
 - `besides(distance, angle)`: given the distance and angle of an obstacle to a robot, return the closest angles on the obstacle's left and right that will still fit the robot.
 - `does_fit(angle)`: function does it fit? takes the angle we want to go in as input at returns 0 if the robot fits to go in this angle or the distance of the obstacle that wouldn't make it fit.
