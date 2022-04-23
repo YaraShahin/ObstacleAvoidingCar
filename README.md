@@ -14,7 +14,7 @@
 -while assuming the robot is square declare its sides
 -from inside the code itself change the robot picture itself inside the map
 
-## ******B) While the expected output is 
+## ******B) Expected output is 
 
 **-the map containing the obstacles, robot, target point
 **-robot doing its operation
