@@ -102,7 +102,7 @@ if __name__ == "__main__":
         
         #Ask for the square robot dimension (from min to max)
         robot_size = -1
-        while (robot_size>=3 and robot_size<0):
+        while (robot_size>=3 or robot_size<0):
             print("Please check documentation for robot size vs. obstacle density to ensure robustness.")
             robot_size = float(input("Please enter the square dimension of the robot from zero to 3 (default is 0.8): "))
             
