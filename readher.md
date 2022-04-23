@@ -1,1 +1,3 @@
 # Obstacle Avoiding Car-like Robot
+## Introduction
+ObstacleAvoidingCar.py is a robotics project made by level 4 electrical and electronics engineering students, Yara Shahin and Mohamed Abbas, as part of our computer engineering module. In this project, we attempt to use the python version of the robotics toolbox, developed by Peter Corke, to program a car-like robot to autonomously navigate to a user-input target while avoiding a number of obstacles placed randomly throughout the 20x20 map. The work on this project consisted of three main milestones: Algorithm planning, implementation, and evaluation. 
