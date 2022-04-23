@@ -56,7 +56,10 @@ The code has been tested with different initial and target positions, with numbe
 The main aspect of improvement in focus for us was the robustness of the program in environments with many obstacles. We aimed to increase maneuverability in tight spaces. That is reflected through the following areas of improvement:
 - The robot knows its size and therefore can determine if the space in front of it will fit it, even if it contains some obstacles
 - Given the robot's size, it can calculate the least angle diversion that will enable it to avoid the robot, which is achieved by appending all open angles in a list and choosing the absolute minimal (angle-goal_angle)
-- 
+- The robot icon is automatically scaled according to the user-input size
+### Areas for improvement
+<input type="checkbox" id="item1">
+<label for="item1"> LOL</label><br>
 ## References 
 [1] Talabattula Sai Abhishek et al 2021 IOP Conf. Ser.: Mater. Sci. Eng. 1012 012052 <br/>
 [2] Lumelsky, V., Skewis, T., “Incorporating Range Sensing in the Robot Navigation Function.” IEEE Transactions on Systems, Man, and Cybernetics, 20:1990, pp. 1058–1068.  <br />
