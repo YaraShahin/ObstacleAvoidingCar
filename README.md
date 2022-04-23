@@ -1,5 +1,5 @@
 # ObstacleAvoidingCar
-## ******A)	Planing this project consisted of 3 main stages 
+## A)	Planing this project consisted of 3 main stages 
 **-researching algorithms
 -trials 
 -error testing
