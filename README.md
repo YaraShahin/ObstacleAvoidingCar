@@ -58,8 +58,10 @@ The main aspect of improvement in focus for us was the robustness of the program
 - Given the robot's size, it can calculate the least angle diversion that will enable it to avoid the robot, which is achieved by appending all open angles in a list and choosing the absolute minimal (angle-goal_angle)
 - The robot icon is automatically scaled according to the user-input size
 ### Areas for improvement
-<input type="checkbox" id="item1">
-<label for="item1"> LOL</label><br>
+- Increase efficiency: since we loop over all the obstacles multiple times in each run to decide which are close at each point at time, the time-complexity of the algorithm high. However, in a real life situation, the sensor would only detect the near object, removing the need to ignore the rest of the readings.
+- Increase accuracy by making speed function of turning angle and the distance to target.
+- Increase robustness by making the margins a function of obstacle density
+- Alternative approach: Use a recursive function instead of looping on all the near obstacles (although we tried this approach, it soon gave maximum recursion depth exceeded error)
 ## References 
 [1] Talabattula Sai Abhishek et al 2021 IOP Conf. Ser.: Mater. Sci. Eng. 1012 012052 <br/>
 [2] Lumelsky, V., Skewis, T., “Incorporating Range Sensing in the Robot Navigation Function.” IEEE Transactions on Systems, Man, and Cybernetics, 20:1990, pp. 1058–1068.  <br />
