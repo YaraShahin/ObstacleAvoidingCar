@@ -1,6 +1,7 @@
 # ObstacleAvoidingCar
 ## ******A)	Planing this project consisted of 3 main stages 
--researching algorithms 
+
+-researching algorithms
 -trials 
 -error testing
 
